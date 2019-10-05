@@ -14,12 +14,12 @@ def doStuff(mode, key, filein, fileout):
         text = bytearray(fin.read())
 
         if mode == "e":
-            # print("DE:", text[:100])
+            print("DE:", text[:100])
             encrypted_chars = bytearray([])
             for char in text:
                 en_char = (char + key) % 256
                 encrypted_chars.append(en_char)
-            # print("EN:", encrypted_chars[:100])
+            print("EN:", encrypted_chars[:100])
             output_bytes = encrypted_chars
 
         elif mode == "d":
